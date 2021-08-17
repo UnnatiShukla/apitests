@@ -1,0 +1,1944 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-08-17T19:59:17.571Z",
+        "line": 4,
+        "name": "",
+        "description": "Verify whether User Gets the First of quotes, with 20 results per page when no page value is passed",
+        "id": "testing-quotableapi-s-list-quotes-based-on-page-values;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 634582100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User has set QuotableAPI endpoint for fetching quotes",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.user_has_set_quotable_api_endpoint_for_fetching_quotes()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 16552500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "No Page Value is Passed in HTTP Request",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.no_page_value_is_passed_in_http_request()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1840224400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User Sends \"GET\" HTTP request to \"ListQuotesAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"ListQuotesAPI\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_sends_a_get_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User should receive page 1 of quotes by default",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 25
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_page_of_quotes_by_default(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListQuotesPageWise"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-17T19:59:20.141Z",
+        "line": 36,
+        "name": "",
+        "description": "Verify whether User Gets the Nth page of quotes, with n results per page depending on the page user has requested ",
+        "id": "testing-quotableapi-s-list-quotes-based-on-page-values;;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1179100,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User has set QuotableAPI endpoint for fetching quotes",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.user_has_set_quotable_api_endpoint_for_fetching_quotes()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 849100,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Page Value 1 is Passed in HTTP Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 11
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.page_value_is_passed_in_http_request(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 674756000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User Sends \"GET\" HTTP request to \"ListQuotesAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"ListQuotesAPI\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_sends_a_get_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should receive page 1 of quotes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 25
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_page_of_quotes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User should receive 20 results per page with page number 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "20",
+                  "offset": 20
+                },
+                {
+                  "val": "1",
+                  "offset": 57
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_results_per_page_with_page_number(int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User should receive HTTP Response Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1001200,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User should receive HTTP Response Content in \"JSON\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JSON\"",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_content_in_format(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "HTTP Response Parameter \"totalPages\" value should be 95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"totalPages\"",
+                  "offset": 24
+                },
+                {
+                  "val": "95",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "HTTP Response Parameter \"lastItemIndex\" value should be 20 with Page number 1 requested",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"lastItemIndex\"",
+                  "offset": 24
+                },
+                {
+                  "val": "20",
+                  "offset": 56
+                },
+                {
+                  "val": "1",
+                  "offset": 76
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be_with_page_number_requested(java.lang.String,int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "HTTP Response Parameter \"tags\" list within each resultant quote should never be empty",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tags\"",
+                  "offset": 24
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_list_within_each_resultant_quote_should_never_be(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "HTTP Response Parameter within each resultant quote should NOT have NULL value",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_within_each_resultant_quote_should_not_have_null_value()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "HTTP Response Parameter author-slug value within each resultant quote should be a valid slug-string of author",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_author_slug_value_within_each_resultant_quote_should_be_a_valid_slug_string_of_author()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "HTTP Response Parameter length value within each resultant quote should be a correct based on the content returned",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_length_value_within_each_resultant_quote_should_be_a_correct_based_on_the_content_returned()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "HTTP Response Parameter \"dateAdded\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateAdded\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 103
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "HTTP Response Parameter \"dateModified\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateModified\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 106
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListQuotesPageWise"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-17T19:59:20.827Z",
+        "line": 37,
+        "name": "",
+        "description": "Verify whether User Gets the Nth page of quotes, with n results per page depending on the page user has requested ",
+        "id": "testing-quotableapi-s-list-quotes-based-on-page-values;;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1049800,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User has set QuotableAPI endpoint for fetching quotes",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.user_has_set_quotable_api_endpoint_for_fetching_quotes()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Page Value 2 is Passed in HTTP Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 11
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.page_value_is_passed_in_http_request(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 726968300,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User Sends \"GET\" HTTP request to \"ListQuotesAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"ListQuotesAPI\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_sends_a_get_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should receive page 2 of quotes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 25
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_page_of_quotes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User should receive 20 results per page with page number 2",
+            "match": {
+              "arguments": [
+                {
+                  "val": "20",
+                  "offset": 20
+                },
+                {
+                  "val": "2",
+                  "offset": 57
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_results_per_page_with_page_number(int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User should receive HTTP Response Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User should receive HTTP Response Content in \"JSON\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JSON\"",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_content_in_format(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "HTTP Response Parameter \"totalPages\" value should be 95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"totalPages\"",
+                  "offset": 24
+                },
+                {
+                  "val": "95",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "HTTP Response Parameter \"lastItemIndex\" value should be 40 with Page number 2 requested",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"lastItemIndex\"",
+                  "offset": 24
+                },
+                {
+                  "val": "40",
+                  "offset": 56
+                },
+                {
+                  "val": "2",
+                  "offset": 76
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be_with_page_number_requested(java.lang.String,int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "HTTP Response Parameter \"tags\" list within each resultant quote should never be empty",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tags\"",
+                  "offset": 24
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_list_within_each_resultant_quote_should_never_be(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "HTTP Response Parameter within each resultant quote should NOT have NULL value",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_within_each_resultant_quote_should_not_have_null_value()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "HTTP Response Parameter author-slug value within each resultant quote should be a valid slug-string of author",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_author_slug_value_within_each_resultant_quote_should_be_a_valid_slug_string_of_author()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "HTTP Response Parameter length value within each resultant quote should be a correct based on the content returned",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_length_value_within_each_resultant_quote_should_be_a_correct_based_on_the_content_returned()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 998800,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "HTTP Response Parameter \"dateAdded\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateAdded\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 103
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "HTTP Response Parameter \"dateModified\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateModified\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 106
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListQuotesPageWise"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-17T19:59:21.561Z",
+        "line": 38,
+        "name": "",
+        "description": "Verify whether User Gets the Nth page of quotes, with n results per page depending on the page user has requested ",
+        "id": "testing-quotableapi-s-list-quotes-based-on-page-values;;;4",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 997900,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User has set QuotableAPI endpoint for fetching quotes",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.user_has_set_quotable_api_endpoint_for_fetching_quotes()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Page Value 10 is Passed in HTTP Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 11
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.page_value_is_passed_in_http_request(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 674851500,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User Sends \"GET\" HTTP request to \"ListQuotesAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"ListQuotesAPI\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_sends_a_get_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should receive page 10 of quotes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 25
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_page_of_quotes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User should receive 20 results per page with page number 10",
+            "match": {
+              "arguments": [
+                {
+                  "val": "20",
+                  "offset": 20
+                },
+                {
+                  "val": "10",
+                  "offset": 57
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_results_per_page_with_page_number(int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User should receive HTTP Response Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 169100,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User should receive HTTP Response Content in \"JSON\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JSON\"",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_content_in_format(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "HTTP Response Parameter \"totalPages\" value should be 95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"totalPages\"",
+                  "offset": 24
+                },
+                {
+                  "val": "95",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "HTTP Response Parameter \"lastItemIndex\" value should be 200 with Page number 10 requested",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"lastItemIndex\"",
+                  "offset": 24
+                },
+                {
+                  "val": "200",
+                  "offset": 56
+                },
+                {
+                  "val": "10",
+                  "offset": 77
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be_with_page_number_requested(java.lang.String,int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "HTTP Response Parameter \"tags\" list within each resultant quote should never be empty",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tags\"",
+                  "offset": 24
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_list_within_each_resultant_quote_should_never_be(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "HTTP Response Parameter within each resultant quote should NOT have NULL value",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_within_each_resultant_quote_should_not_have_null_value()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "HTTP Response Parameter author-slug value within each resultant quote should be a valid slug-string of author",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_author_slug_value_within_each_resultant_quote_should_be_a_valid_slug_string_of_author()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "HTTP Response Parameter length value within each resultant quote should be a correct based on the content returned",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_length_value_within_each_resultant_quote_should_be_a_correct_based_on_the_content_returned()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "HTTP Response Parameter \"dateAdded\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateAdded\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 103
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "HTTP Response Parameter \"dateModified\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateModified\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 106
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListQuotesPageWise"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-17T19:59:22.244Z",
+        "line": 39,
+        "name": "",
+        "description": "Verify whether User Gets the Nth page of quotes, with n results per page depending on the page user has requested ",
+        "id": "testing-quotableapi-s-list-quotes-based-on-page-values;;;5",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 964000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User has set QuotableAPI endpoint for fetching quotes",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.user_has_set_quotable_api_endpoint_for_fetching_quotes()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Page Value 94 is Passed in HTTP Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "94",
+                  "offset": 11
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.page_value_is_passed_in_http_request(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 674025100,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User Sends \"GET\" HTTP request to \"ListQuotesAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"ListQuotesAPI\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_sends_a_get_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should receive page 94 of quotes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "94",
+                  "offset": 25
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_page_of_quotes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User should receive 20 results per page with page number 94",
+            "match": {
+              "arguments": [
+                {
+                  "val": "20",
+                  "offset": 20
+                },
+                {
+                  "val": "94",
+                  "offset": 57
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_results_per_page_with_page_number(int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User should receive HTTP Response Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User should receive HTTP Response Content in \"JSON\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JSON\"",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_content_in_format(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "HTTP Response Parameter \"totalPages\" value should be 95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"totalPages\"",
+                  "offset": 24
+                },
+                {
+                  "val": "95",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 993300,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "HTTP Response Parameter \"lastItemIndex\" value should be 1880 with Page number 94 requested",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"lastItemIndex\"",
+                  "offset": 24
+                },
+                {
+                  "val": "1880",
+                  "offset": 56
+                },
+                {
+                  "val": "94",
+                  "offset": 78
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be_with_page_number_requested(java.lang.String,int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "HTTP Response Parameter \"tags\" list within each resultant quote should never be empty",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tags\"",
+                  "offset": 24
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_list_within_each_resultant_quote_should_never_be(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "HTTP Response Parameter within each resultant quote should NOT have NULL value",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_within_each_resultant_quote_should_not_have_null_value()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "HTTP Response Parameter author-slug value within each resultant quote should be a valid slug-string of author",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_author_slug_value_within_each_resultant_quote_should_be_a_valid_slug_string_of_author()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "HTTP Response Parameter length value within each resultant quote should be a correct based on the content returned",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_length_value_within_each_resultant_quote_should_be_a_correct_based_on_the_content_returned()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "HTTP Response Parameter \"dateAdded\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateAdded\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 103
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "HTTP Response Parameter \"dateModified\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateModified\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 106
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListQuotesPageWise"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-17T19:59:22.925Z",
+        "line": 40,
+        "name": "",
+        "description": "Verify whether User Gets the Nth page of quotes, with n results per page depending on the page user has requested ",
+        "id": "testing-quotableapi-s-list-quotes-based-on-page-values;;;6",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 977800,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User has set QuotableAPI endpoint for fetching quotes",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.user_has_set_quotable_api_endpoint_for_fetching_quotes()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Page Value 95 is Passed in HTTP Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "95",
+                  "offset": 11
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.page_value_is_passed_in_http_request(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 651321200,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User Sends \"GET\" HTTP request to \"ListQuotesAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"ListQuotesAPI\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_sends_a_get_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should receive page 95 of quotes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "95",
+                  "offset": 25
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_page_of_quotes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User should receive 5 results per page with page number 95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 20
+                },
+                {
+                  "val": "95",
+                  "offset": 56
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_results_per_page_with_page_number(int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User should receive HTTP Response Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User should receive HTTP Response Content in \"JSON\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JSON\"",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_content_in_format(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "HTTP Response Parameter \"totalPages\" value should be 95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"totalPages\"",
+                  "offset": 24
+                },
+                {
+                  "val": "95",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 997500,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "HTTP Response Parameter \"lastItemIndex\" value should be 0 with Page number 95 requested",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"lastItemIndex\"",
+                  "offset": 24
+                },
+                {
+                  "val": "0",
+                  "offset": 56
+                },
+                {
+                  "val": "95",
+                  "offset": 75
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be_with_page_number_requested(java.lang.String,int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "HTTP Response Parameter \"tags\" list within each resultant quote should never be empty",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tags\"",
+                  "offset": 24
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_list_within_each_resultant_quote_should_never_be(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "HTTP Response Parameter within each resultant quote should NOT have NULL value",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_within_each_resultant_quote_should_not_have_null_value()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "HTTP Response Parameter author-slug value within each resultant quote should be a valid slug-string of author",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_author_slug_value_within_each_resultant_quote_should_be_a_valid_slug_string_of_author()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "HTTP Response Parameter length value within each resultant quote should be a correct based on the content returned",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_length_value_within_each_resultant_quote_should_be_a_correct_based_on_the_content_returned()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "HTTP Response Parameter \"dateAdded\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateAdded\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 103
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "HTTP Response Parameter \"dateModified\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateModified\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 106
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListQuotesPageWise"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-17T19:59:23.583Z",
+        "line": 41,
+        "name": "",
+        "description": "Verify whether User Gets the Nth page of quotes, with n results per page depending on the page user has requested ",
+        "id": "testing-quotableapi-s-list-quotes-based-on-page-values;;;7",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 948000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User has set QuotableAPI endpoint for fetching quotes",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.user_has_set_quotable_api_endpoint_for_fetching_quotes()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 514900,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Page Value -1 is Passed in HTTP Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "-1",
+                  "offset": 11
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.page_value_is_passed_in_http_request(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 705819300,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User Sends \"GET\" HTTP request to \"ListQuotesAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"ListQuotesAPI\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_sends_a_get_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should receive page 1 of quotes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 25
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_page_of_quotes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User should receive 20 results per page with page number -1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "20",
+                  "offset": 20
+                },
+                {
+                  "val": "-1",
+                  "offset": 57
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_results_per_page_with_page_number(int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User should receive HTTP Response Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User should receive HTTP Response Content in \"JSON\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JSON\"",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_content_in_format(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "HTTP Response Parameter \"totalPages\" value should be 95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"totalPages\"",
+                  "offset": 24
+                },
+                {
+                  "val": "95",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "HTTP Response Parameter \"lastItemIndex\" value should be 20 with Page number -1 requested",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"lastItemIndex\"",
+                  "offset": 24
+                },
+                {
+                  "val": "20",
+                  "offset": 56
+                },
+                {
+                  "val": "-1",
+                  "offset": 76
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be_with_page_number_requested(java.lang.String,int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "HTTP Response Parameter \"tags\" list within each resultant quote should never be empty",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tags\"",
+                  "offset": 24
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_list_within_each_resultant_quote_should_never_be(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "HTTP Response Parameter within each resultant quote should NOT have NULL value",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_within_each_resultant_quote_should_not_have_null_value()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "HTTP Response Parameter author-slug value within each resultant quote should be a valid slug-string of author",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_author_slug_value_within_each_resultant_quote_should_be_a_valid_slug_string_of_author()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 997000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "HTTP Response Parameter length value within each resultant quote should be a correct based on the content returned",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_length_value_within_each_resultant_quote_should_be_a_correct_based_on_the_content_returned()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "HTTP Response Parameter \"dateAdded\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateAdded\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 103
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "HTTP Response Parameter \"dateModified\" value within each resultant quote should be a valid Date in format \"YYYY-MM-DD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"dateModified\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"YYYY-MM-DD\"",
+                  "offset": 106
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_respose_parameter_value_within_each_resultant_quote_should_be_a_valid_date_in_format(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListQuotesPageWise"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-17T19:59:24.297Z",
+        "line": 44,
+        "name": "",
+        "description": "Verify whether User tries to get the Page which is greater than total number pages, request will not return any results",
+        "id": "testing-quotableapi-s-list-quotes-based-on-page-values;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3579900,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "User has set QuotableAPI endpoint for fetching quotes",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.user_has_set_quotable_api_endpoint_for_fetching_quotes()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "Page Value 96 is Passed in HTTP Request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "96",
+                  "offset": 11
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.page_value_is_passed_in_http_request(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 674278800,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "User Sends \"GET\" HTTP request to \"ListQuotesAPI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"ListQuotesAPI\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_sends_a_get_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "request should not return any results",
+            "match": {
+              "location": "stepDefinitions.stepDefinitions.request_should_not_return_any_results()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "User should receive HTTP Response Status Code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "User should receive HTTP Response Content in \"JSON\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JSON\"",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_http_response_content_in_format(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "HTTP Response Parameter \"totalPages\" value should be 95",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"totalPages\"",
+                  "offset": 24
+                },
+                {
+                  "val": "95",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "HTTP Response Parameter \"lastItemIndex\" value should be 0 with Page number 96 requested",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"lastItemIndex\"",
+                  "offset": 24
+                },
+                {
+                  "val": "0",
+                  "offset": 56
+                },
+                {
+                  "val": "96",
+                  "offset": 75
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.http_response_parameter_value_should_be_with_page_number_requested(java.lang.String,int,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "User should receive 0 results per page with page number 96",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 20
+                },
+                {
+                  "val": "96",
+                  "offset": 56
+                }
+              ],
+              "location": "stepDefinitions.stepDefinitions.user_should_receive_results_per_page_with_page_number(int,int)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListQuotesPageWise"
+          },
+          {
+            "name": "@SmokeTest"
+          }
+        ]
+      }
+    ],
+    "name": "Testing QuotableAPI\u0027s List Quotes based on page values",
+    "description": "",
+    "id": "testing-quotableapi-s-list-quotes-based-on-page-values",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/pageWiseListingOfQuotes.feature",
+    "tags": []
+  }
+]
